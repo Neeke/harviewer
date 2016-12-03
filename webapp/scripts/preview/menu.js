@@ -18,7 +18,7 @@ var MenuPlate = domplate(
 {
     tag:
         DIV({"class": "menu", _repObject: "$object"},
-            DIV({"class": "menuHandle", onmousemove: "$onMouseMove", onclick: "$onMouseClick"}),
+            //DIV({"class": "menuHandle", onmousemove: "$onMouseMove", onclick: "$onMouseClick"}),
             DIV({"class": "menuContent", "style": "display: none"})
         ),
 
@@ -86,19 +86,19 @@ Menu.prototype =
         // Construct toolbar and render it inside the menu.
         this.toolbar = new Toolbar();
 
-        this.toolbar.addButton({
-            id: "credentials",
-            label: "Powered by Jan Odvarko",
-            tooltiptext: "http://www.softwareishard.com/blog/har-viewer/",
-            command: Lib.bindFixed(this.onCredentials, this, true)
-        });
+        //this.toolbar.addButton({
+        //    id: "credentials",
+        //    label: "Powered by Jan Odvarko",
+        //    tooltiptext: "http://www.softwareishard.com/blog/har-viewer/",
+        //    command: Lib.bindFixed(this.onCredentials, this, true)
+        //});
 
-        /*this.toolbar.addButton({
-            id: "fullPreview",
-            label: "Open in HAR Viewer",
-            tooltiptext: "Open the current HAR file in HAR Viewer",
-            command: Lib.bindFixed(this.onFullPreview, this, true)
-        });*/
+        //this.toolbar.addButton({
+        //    id: "fullPreview",
+        //    label: "Open in HAR Viewer",
+        //    tooltiptext: "Open the current HAR file in HAR Viewer",
+        //    command: Lib.bindFixed(this.onFullPreview, this, true)
+        //});
 
         var menuContent = Lib.getElementByClass(this.element, "menuContent");
         this.toolbar.render(menuContent);
