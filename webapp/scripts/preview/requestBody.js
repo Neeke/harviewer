@@ -659,8 +659,9 @@ define("preview/requestBody", [
             // there can be a charset specified. So, check the prefix.
             var mimeType = file.response.content.mimeType || "";
             var fileMimeType = file.mimeType || "";
-            return (Lib.startsWith(mimeType, "text/html")) ||
-                (Lib.startsWith(fileMimeType, "application/xhtml+xml"));
+            return (file.response.content && file.response.content.text &&
+            ((Lib.startsWith(mimeType, "text/html")) ||
+            (Lib.startsWith(fileMimeType, "application/xhtml+xml"))));
         };
 
         /**
