@@ -809,7 +809,7 @@ define("preview/requestBody", [
                 id: "Ping",
                 label: Strings.Ping,
 
-                bodyTag: DIV({"class": "netInfoJsonText netInfoText"}),
+                bodyTag: DIV({"class": "netInfoJsonText netInfoText objectPingData"}),
 
                 onUpdateBody: function (tabView, body) {
                     Lib.clearNode(body.firstChild);
@@ -830,7 +830,7 @@ define("preview/requestBody", [
                 id: "TraceRoute",
                 label: Strings.TraceRoute,
 
-                bodyTag: DIV({"class": "netInfoJsonText netInfoText"}),
+                bodyTag: DIV({"class": "netInfoJsonText netInfoText objectTraceRouteData"}),
 
                 onUpdateBody: function (tabView, body) {
                     Lib.clearNode(body.firstChild);
