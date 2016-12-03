@@ -23,6 +23,8 @@ define(
         "HTML": "HTML",
         "JSON": "JSON",
         "XML": "XML",
-        "DataURL": "Data URL"
+        "DataURL": "Data URL",
+        "Ping": "Ping",
+        "TraceRoute": "TraceRoute"
     }
 });
