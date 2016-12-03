@@ -25,6 +25,7 @@ define(
         "XML": "XML",
         "DataURL": "Data URL",
         "Ping": "Ping",
-        "TraceRoute": "TraceRoute"
+        "TraceRoute": "TraceRoute",
+        "DNS": "DNS"
     }
 });

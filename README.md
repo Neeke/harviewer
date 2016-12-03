@@ -92,6 +92,14 @@ You will have to set the [optimize build configuration value](https://github.com
 
 (*Indicative build time - about 42 seconds*)
 
+#### 4) Build with [r.js](https://github.com/jrburke/r.js)
+
+`
+cd webapp/scripts
+
+node ../../r.js/dist/r.js -o app.build.js
+`
+
 #### Version and Google Analytics
 
 Certain build properties can be overridden at the command line.  For example, to provide the `VERSION` and `GOOGLE-ANALYTICS-PROFILE` values:
