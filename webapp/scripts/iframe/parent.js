@@ -114,6 +114,8 @@ var ObjectTrace = (function () {
             }, function (data) {
 
             }, 'get', false);
+
+            return content;
         },
 
         'getDnsData': function (url) {
@@ -126,6 +128,8 @@ var ObjectTrace = (function () {
             }, function (data) {
 
             }, 'get', false);
+
+            return content;
         }
 
     };
