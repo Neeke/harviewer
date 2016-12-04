@@ -589,12 +589,12 @@ RequestList.prototype = domplate(
     getHref: function(file)
     {
         var fileName = Lib.getFileName(this.getFullHref(file));
-        return unescape(file.request.method + " " + fileName);
+        return decodeURI(file.request.method + " " + fileName);
     },
 
     getFullHref: function(file)
     {
-        return unescape(file.request.url);
+        return decodeURI(file.request.url);
     },
 
     getStatus: function(file)
