@@ -41,7 +41,7 @@
 
 /* Visual separator between phases */
 .netRow[breakLayout="true"] .netCol {
-    border-top: 1px solid rgb(207,207,207);
+    border-top: 1px solid rgb(207, 207, 207);
 }
 
 .netTypeCol,
@@ -252,7 +252,7 @@
     top: 0;
     bottom: 0;
     width: 1px;
-    z-index:90;
+    z-index: 90;
     opacity: 0.5;
     display: none;
     background-color: green;
@@ -267,6 +267,10 @@
 
 .netWindowLoadBar {
     background-color: red;
+}
+
+.netFirstViewBar {
+    background-color: greenyellow;
 }
 
 .netContentLoadBar {
@@ -317,13 +321,14 @@
 }
 
 .timeInfoTipSeparator SPAN {
-    white-space:pre-wrap;
+    white-space: pre-wrap;
 }
 
 .timeInfoTipEventBar {
     width: 1px !important;
 }
 
+.netFirstViewBar.timeInfoTipBar,
 .netWindowLoadBar.timeInfoTipBar,
 .netContentLoadBar.timeInfoTipBar {
     width: 1px;
@@ -403,19 +408,19 @@
 
 .netCacheSizeLabel {
     display: inline-block;
-    float:left;
+    float: left;
     padding-left: 6px;
 }
 
 .netTransferredSizeLabel {
     display: inline-block;
-    float:left;
+    float: left;
     padding-left: 6px;
 }
 
 .netUncompressedSizeLabel {
     display: inline-block;
-    float:left;
+    float: left;
     padding-left: 6px;
 }
 
