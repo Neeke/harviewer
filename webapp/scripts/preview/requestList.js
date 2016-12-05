@@ -577,7 +577,11 @@ define("preview/requestList", [
                 },
 
                 getFullHref: function (file) {
-                    return decodeURI(file.request.url);
+                    try {
+                        return decodeURI(file.request.url);
+                    } catch (err) {
+                        return unescape(file.request.url);
+                    }
                 },
 
                 getStatus: function (file) {
