@@ -557,7 +557,8 @@ define("preview/requestList", [
 
                 isError: function (file) {
                     var errorRange = Math.floor(file.response.status / 100);
-                    return errorRange === 4 || errorRange === 5 || errorRange === 0;
+                    return errorRange >= 4 || errorRange === 0;
+                    //return errorRange === 4 || errorRange === 5 || errorRange === 0;
                 },
 
                 isRedirect: function (file) {
