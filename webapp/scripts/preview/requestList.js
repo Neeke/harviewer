@@ -573,7 +573,12 @@ define("preview/requestList", [
 
                 getHref: function (file) {
                     var fileName = Lib.getFileName(this.getFullHref(file));
-                    return decodeURI(file.request.method + " " + fileName);
+
+                    try {
+                        return decodeURI(file.request.method + " " + fileName);
+                    } catch (err) {
+                        return unescape(file.request.method + " " + fileName);
+                    }
                 },
 
                 getFullHref: function (file) {
