@@ -931,31 +931,36 @@ var Renderer =
         var parent = before.tagName.toLowerCase() === "tr" ? before.parentNode : before;
         var after = before.tagName.toLowerCase() === "tr" ? before.nextSibling : null;
 
-        var firstRow = tbody.firstChild;
-        var lastRow;
-        while (tbody.firstChild)
-        {
-            lastRow = tbody.firstChild;
-            if (after)
-                parent.insertBefore(lastRow, after);
-            else
-                parent.appendChild(lastRow);
+        /**
+         * @auther neeke
+         */
+        if (tbody && tbody.firstChild) {
+            var firstRow = tbody.firstChild;
+            var lastRow;
+            while (tbody.firstChild)
+            {
+                lastRow = tbody.firstChild;
+                if (after)
+                    parent.insertBefore(lastRow, after);
+                else
+                    parent.appendChild(lastRow);
+            }
+
+            var offset = 0;
+            if (this.tag.isLoop)
+            {
+                var node = firstRow.parentNode.firstChild;
+                for (; node && node !== firstRow; node = node.nextSibling)
+                    ++offset;
+            }
+
+            var domArgs = [firstRow, this.tag.context, offset];
+            domArgs.push.apply(domArgs, this.tag.domArgs);
+            domArgs.push.apply(domArgs, outputs);
+
+            this.tag.renderDOM.apply(self ? self : this.tag.subject, domArgs);
+            return [firstRow, lastRow];
         }
-
-        var offset = 0;
-        if (this.tag.isLoop)
-        {
-            var node = firstRow.parentNode.firstChild;
-            for (; node && node !== firstRow; node = node.nextSibling)
-                ++offset;
-        }
-
-        var domArgs = [firstRow, this.tag.context, offset];
-        domArgs.push.apply(domArgs, this.tag.domArgs);
-        domArgs.push.apply(domArgs, outputs);
-
-        this.tag.renderDOM.apply(self ? self : this.tag.subject, domArgs);
-        return [firstRow, lastRow];
     },
 
     insertAfter: function(args, before, self)
